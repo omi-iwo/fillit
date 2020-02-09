@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:49:03 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/06 17:16:49 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/09 03:03:22 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int		*presec2(int quantity, int *sequence)
 	free(sec);
 	return (sequence);
 }
-
 
 void	transposition2(int **pole, int **figures, int quantity, int *sequence)
 {

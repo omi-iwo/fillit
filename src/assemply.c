@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:34:55 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/05 08:04:17 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/09 02:47:01 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		sizein(int quantity, int *sequence, int **figures)
 	return (size);
 }
 
-void		assembly(int **pole, int **figures, int quantity, int *sequence)
+void	assembly(int **pole, int **figures, int quantity, int *sequence)
 {
 	int	i;
 	int	size;

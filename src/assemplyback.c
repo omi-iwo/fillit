@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:34:55 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/06 11:42:13 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/09 03:06:39 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int		assemblyback(int **pole, int **figures, int quantity, int *sequence)
 				i = 1;
 			}
 		}
-
 		i++;
 	}
 	return (1);

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   testpre.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/09 02:59:53 by sphone            #+#    #+#             */
+/*   Updated: 2020/02/09 03:02:00 by sphone           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-int test(int *temp, int *pole, int i)
+int		test(int *temp, int *pole, int i)
 {
 	int x1;
 	int y1;
@@ -20,13 +32,13 @@ int test(int *temp, int *pole, int i)
 		return (1);
 }
 
-int testpreswap(int **pole, int **temp, int q)
+int		testpreswap(int **pole, int **temp, int q)
 {
 	swapy(pole, temp, q);
 	return (1);
 }
 
-int testpre(int **pole, int **temp, int *seq, int *sequence)
+int		testpre(int **pole, int **temp, int *seq, int *sequence)
 {
 	int i;
 	int n;

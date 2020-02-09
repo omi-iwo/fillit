@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:34:55 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/05 03:36:35 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/09 03:08:04 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int		testinsideback2(int **p, int j, int x)
 	}
 	return (0);
 }
-
 
 int		assemblyback2(int **pole, int **figures, int quantity, int *sequence)
 {

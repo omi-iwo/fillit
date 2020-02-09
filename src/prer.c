@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prer.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olegolszewski <olegolszewski@student.42.fr>+#+  +:+       +#+        */
+/*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/06 17:33:43 by olegolszewski     #+#    #+#             */
-/*   Updated: 2020/02/06 17:33:43 by olegolszewski    ###   ########.fr       */
+/*   Created: 2020/02/09 02:53:34 by sphone            #+#    #+#             */
+/*   Updated: 2020/02/09 02:54:54 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	pretest(int **pole, int **figures, int quantity, int *seq)
 
 void	copyseq(int *seq, int *sequence, int quantity)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < quantity + 1)
@@ -42,6 +42,7 @@ void	copyseq(int *seq, int *sequence, int quantity)
 	free(seq);
 	return ;
 }
+
 void	prer(int **pole, int **figures, int quantity, int *sequence)
 {
 	int **temp;
