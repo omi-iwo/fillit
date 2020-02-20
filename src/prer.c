@@ -6,60 +6,69 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 02:53:34 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/09 02:54:54 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 20:42:20 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		**tempys(int **pole, int **figures, int quantity)
-{
-	int **temp;
-
-	temp = createplace(figures, quantity);
-	swapy(temp, pole, quantity);
-	return (temp);
-}
-
-void	pretest(int **pole, int **figures, int quantity, int *seq)
-{
-	soft(pole, figures, quantity);
-	sequencecreate3(quantity, seq);
-	assembly3(pole, figures, quantity, seq);
-	return ;
-}
-
-void	copyseq(int *seq, int *sequence, int quantity)
+void	copyseq(long long *set, long long *seq, int qua)
 {
 	int	i;
 
 	i = 0;
-	while (i < quantity + 1)
+	while (i < qua + 2)
 	{
-		sequence[i] = seq[i];
+		seq[i] = set[i];
 		i++;
 	}
-	free(seq);
 	return ;
 }
 
-void	prer(int **pole, int **figures, int quantity, int *sequence)
+void	clone(int **temp, int **pole, int qua)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < qua)
+	{
+		while (j < 8)
+		{
+			temp[i][j] = pole[i][j];
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return ;
+}
+
+void	prer(int **pole, int **figures, int qua, long long *seq)
 {
 	int **temp;
-	int *seq;
-	int i;
+	long long *set;
 
-	seq = NULL;
-	temp = tempys(pole, figures, quantity);
-	assembly(pole, figures, quantity, sequence);
-	swapy(temp, pole, quantity);
-	soft(pole, figures, quantity);
-	seq = sequencecreate2(quantity, seq, sequence[quantity + 1]);
-	if ((i = assembly2(pole, figures, quantity, seq)) == 1)
-		pretest(pole, figures, quantity, seq);
-	seq[0] = quantity;
-	if (testpre(pole, temp, seq, sequence) == 0)
-		copyseq(seq, sequence, quantity);
-	freefigures(temp, quantity);
+
+	set = sequencecreate(qua);
+	size(qua, seq, figures);
+	assembly(pole, figures, qua, seq);
+
+	temp = createplace(figures, qua);
+	copyseq(seq, set, qua);
+	clone(temp, pole, qua);
+	if (set[0] < (get_num(qua) / qua))
+	{
+		transposition(temp, figures, qua, set);
+		if (assembly2(temp, figures, qua, set) == 0)
+		{
+			set[0] = qua;
+			if (testpre(pole, temp, set, seq) == 1)
+				copyseq(set, seq, qua);
+		}
+	}
+	free(set);
+	freefigures(temp, qua);
 	return ;
 }

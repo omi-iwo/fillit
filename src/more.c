@@ -6,13 +6,13 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:16:17 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:41:43 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 14:54:59 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		more(int *sec, int *sequence, int i, int j)
+int		more(long long *sec, long long *seq, int i, int j)
 {
 	int	quantity;
 
@@ -25,7 +25,7 @@ int		more(int *sec, int *sequence, int i, int j)
 		if (j == quantity)
 			j = 1;
 	}
-	sequence[i] = sec[j];
+	seq[i] = sec[j];
 	sec[j] = -1;
 	sec[0]--;
 	j++;

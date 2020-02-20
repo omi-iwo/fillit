@@ -12,14 +12,14 @@
 
 #include "fillit.h"
 
-void	soft(int **pole, int **figures, int quantity)
+void	soft(int **pole, int **figures, int qua)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (j < quantity)
+	while (j < qua)
 	{
 		while (i < 8)
 		{

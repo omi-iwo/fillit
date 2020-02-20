@@ -6,32 +6,32 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 04:29:27 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:43:31 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 15:01:29 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	selection(char *test, int quantity)
+void	selection(char *test, int qua)
 {
 	int	**figures;
 	int	**pole;
-	int	*sequence;
+	long long	*seq;
 
 	figures = NULL;
-	sequence = NULL;
+	seq = NULL;
 	pole = NULL;
-	if (!(figures = createplace(figures, quantity)))
+	if (!(figures = createplace(figures, qua)))
 		errors(1);
 	place(test, figures);
-	preshift(figures, quantity);
-	if (!(pole = createplace(figures, quantity)))
+	preshift(figures, qua);
+	if (!(pole = createplace(figures, qua)))
 		errors(1);
-	if (!(sequence = sequencecreate(quantity, sequence)))
+	if (!(seq = sequencecreate(qua)))
 		errors(1);
-	soft(pole, figures, quantity);
-	prer(pole, figures, quantity, sequence);
-	ready(pole, quantity, sequence[quantity + 1], sequence);
-	freeall(pole, figures, quantity, sequence);
+	soft(pole, figures, qua);
+	prer(pole, figures, qua, seq);
+	ready(pole, qua, seq[qua + 1], seq);
+	freeall(pole, figures, qua, seq);
 	return ;
 }

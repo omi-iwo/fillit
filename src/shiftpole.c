@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-int		yshifttest(int *onepole, int size, int *figures)
+int		yshifttest(int *onepole, long long size, int *figures)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int		yshifttest(int *onepole, int size, int *figures)
 	return (0);
 }
 
-int		xshifttest(int *onepole, int size)
+int		xshifttest(int *onepole, long long size)
 {
 	int	i;
 
@@ -55,7 +55,7 @@ int		xshifttest(int *onepole, int size)
 	return (0);
 }
 
-int		shiftpole(int *onepole, int size, int *figures)
+int		shiftpole(int *onepole, long long size, int *figures)
 {
 	if (xshifttest(onepole, size) != 0)
 	{

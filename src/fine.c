@@ -12,18 +12,18 @@
 
 #include "fillit.h"
 
-int		superfine(int *sec, int j, int x, int quantity)
+int		superfine(long long *sec, int j, int x, int qua)
 {
 	if (x == 0)
 	{
 		while (sec[j] < 0)
 		{
 			j++;
-			if (j == quantity + 1)
+			if (j == qua + 1)
 				j = 1;
 		}
 		j++;
-		if (j == quantity + 1)
+		if (j == qua + 1)
 			j = 1;
 	}
 	else
@@ -31,44 +31,44 @@ int		superfine(int *sec, int j, int x, int quantity)
 		while (sec[j] < 0)
 		{
 			j++;
-			if (j == quantity + 1)
+			if (j == qua + 1)
 				j = 1;
 		}
 	}
 	return (j);
 }
 
-int		plusfine(int *sequence, int *sec, int i, int j)
+int		plusfine(long long *seq, long long *sec, int i, int j)
 {
-	sequence[i] = sec[j];
+	seq[i] = sec[j];
 	sec[j] = -1;
 	i++;
 	return (i);
 }
 
-void	fine(int *sec, int *sequence, int i, int j)
+void	fine(long long *sec, long long *seq, int i, int j)
 {
 	int	quantity;
 	int	x;
 
 	quantity = sec[0] + i - 1;
-	if (sequence[0] == 1)
+	if (seq[0] == 1)
 	{
 		x = 0;
 		j = superfine(sec, j, x, quantity);
 		x = 1;
 		j = superfine(sec, j, x, quantity);
-		i = plusfine(sequence, sec, i, j);
+		i = plusfine(seq, sec, i, j);
 		j = superfine(sec, j, x, quantity);
-		sequence[i] = sec[j];
+		seq[i] = sec[j];
 	}
 	else
 	{
 		x = 1;
 		j = superfine(sec, j, x, quantity);
-		i = plusfine(sequence, sec, i, j);
+		i = plusfine(seq, sec, i, j);
 		j = superfine(sec, j, x, quantity);
-		sequence[i] = sec[j];
+		seq[i] = sec[j];
 	}
 	return ;
 }

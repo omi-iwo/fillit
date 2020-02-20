@@ -12,12 +12,12 @@
 
 #include "fillit.h"
 
-void	freefigures(int **figures, int quantity)
+void	freefigures(int **figures, int qua)
 {
 	int	i;
 
 	i = 0;
-	while (i < quantity)
+	while (i < qua)
 	{
 		free(figures[i++]);
 	}

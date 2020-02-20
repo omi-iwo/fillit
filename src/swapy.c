@@ -12,14 +12,14 @@
 
 #include "fillit.h"
 
-void	swapy(int **temp, int **figure, int quantity)
+void	swapy(int **temp, int **figure, int qua)
 {
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
-	while (j < quantity)
+	while (j < qua)
 	{
 		while (i < 8)
 		{

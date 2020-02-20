@@ -31,7 +31,7 @@ void	shift(int *figure, int i, int x, int y)
 	return ;
 }
 
-void	preshift(int **figures, int quantity)
+void	preshift(int **figures, int qua)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,7 @@ void	preshift(int **figures, int quantity)
 	int	y;
 
 	j = 0;
-	while (j < quantity)
+	while (j < qua)
 	{
 		i = 0;
 		x = 4;

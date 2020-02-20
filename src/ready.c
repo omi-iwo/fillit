@@ -6,22 +6,22 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:45:25 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:43:17 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 15:00:54 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char		ingo(int *sequence, int j)
+char		ingo(long long *seq, int j)
 {
 	char	c;
 
 	c = 'A';
-	c = c + sequence[j + 1];
+	c = c + seq[j + 1];
 	return (c);
 }
 
-char		**go(int **pole, char **forprint, int quantity, int *sequence)
+char		**go(int **pole, char **forprint, int qua, long long *seq)
 {
 	int		i;
 	int		j;
@@ -30,13 +30,13 @@ char		**go(int **pole, char **forprint, int quantity, int *sequence)
 
 	i = 0;
 	j = 0;
-	while (j < quantity)
+	while (j < qua)
 	{
 		while (i < 8)
 		{
 			x = pole[j][i] - 1;
 			y = pole[j][i + 1] - 1;
-			forprint[y][x] = ingo(sequence, j);
+			forprint[y][x] = ingo(seq, j);
 			i += 2;
 		}
 		j++;
@@ -82,7 +82,7 @@ char		**stady(int size, char **forprint)
 	return (forprint);
 }
 
-void		ready(int **pole, int quantity, int size, int *sequence)
+void		ready(int **pole, int quantity, int size, long long *seq)
 {
 	int		i;
 	char	**forprint;
@@ -91,7 +91,7 @@ void		ready(int **pole, int quantity, int size, int *sequence)
 	i = 0;
 	if (!(forprint = stady(size, forprint)))
 		errors(1);
-	if (!(forprint = go(pole, forprint, quantity, sequence)))
+	if (!(forprint = go(pole, forprint, quantity, seq)))
 		errors(1);
 	print(forprint, size);
 	while (i < size)

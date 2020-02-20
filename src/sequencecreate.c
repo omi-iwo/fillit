@@ -6,27 +6,28 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:18:00 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:43:42 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 16:25:34 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*sequencecreate(int quantity, int *sequence)
+long long		*sequencecreate(int qua)
 {
 	int	i;
+	long long *sequence;
 
-	i = quantity + 2;
-	if (!(sequence = (int *)malloc(i * sizeof(int))))
+	i = qua + 2;
+	if (!(sequence = (long long *)malloc(i * sizeof(long long))))
 		return (NULL);
 	i = 0;
 	sequence[i] = 1;
 	i++;
-	while (i < quantity + 1)
+	while (i < qua + 1)
 	{
 		sequence[i] = i - 1;
 		i++;
 	}
-	sequence[quantity + 1] = 0;
+	sequence[qua + 1] = 0;
 	return (sequence);
 }

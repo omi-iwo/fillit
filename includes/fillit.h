@@ -6,7 +6,7 @@
 /*   By: cotis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 19:18:48 by cotis             #+#    #+#             */
-/*   Updated: 2020/02/09 02:00:32 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 22:18:44 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,29 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-void	swapy(int **temp, int **figure, int quantity);
-int		testpre(int **pole, int **temp, int *seq, int *sequence);
-void	prer(int **pole, int **figures, int quantity, int *sequence);
-void	preshiftback(int **figures, int quantity, int size);
-void	soft(int **pole, int **figures, int quantity);
+void	size(int qua, long long *seq, int **figures);
+void	swapy(int **temp, int **figure, int qua);
+int		testpre(int **pole, int **temp, long long *set, long long *seq);
+void	prer(int **pole, int **figures, int qua, long long *seq);
+void	soft(int **pole, int **figures, int qua);
 void	errors(int i);
-void	freefigures(int **figures, int quantity);
-void	freeall(int **pole, int **figures, int quantity, int *sequence);
+void	freefigures(int **figures, int qua);
+void	freeall(int **pole, int **figures, int qua, long long *seq);
 int		charly(const char *test);
-void	preshift(int **figures, int quantity);
-int		**createplace(int **figures, int quantity);
+void	preshift(int **figures, int qua);
+int		**createplace(int **figures, int qua);
 void	place(char *test, int **figures);
-int		*sequencecreate(int quantity, int *sequence);
-int		*sequencecreate2(int quantity, int *sequence, int j);
-void	sequencecreate3(int quantity, int *sequence);
-int		get_num(int input);
-int		more(int *sec, int *sequence, int i, int j);
-void	fine(int *sec, int *sequence, int i, int j);
-void	transposition(int **pole, int **figures, int quantity, int *sequence);
-void	transposition2(int **pole, int **figures, int quantity, int *sequence);
-int		presoft(int **pole, int **figures, int quantity, int *sequence);
-int		presoft2(int **pole, int **figures, int quantity, int *sequence);
-int		presoft3(int **pole, int **figures, int quantity, int *sequence);
-int		presoftback(int **pole, int **figures, int quantity, int *sequence);
-int		presoftback2(int **pole, int **figures, int quantity, int *sequence);
-int		shiftpoleback(int *onepole, int *figures);
-int		shiftpole(int *onepole, int size, int *figures);
-void	assembly(int **pole, int **figures, int quantity, int *sequence);
-int		assembly2(int **pole, int **figures, int quantity, int *sequence);
-void	assembly3(int **pole, int **figures, int quantity, int *sequence);
-int		assemblyback(int **pole, int **figures, int quantity, int *sequence);
-int		assemblyback2(int **pole, int **figures, int quantity, int *sequence);
+long long		*sequencecreate(int qua);
+long long		get_num(int input);
+int		more(long long *sec, long long *seq, int i, int j);
+void	fine(long long *sec, long long *seq, int i, int j);
+void	transposition(int **pole, int **figures, int qua, long long *seq);
+int		presoft(int **pole, int **figures, int qua, long long *seq);
+int		shiftpole(int *onepole, long long size, int *figures);
+void	assembly(int **pole, int **figures, int qua, long long *seq);
+int		assembly2(int **pole, int **figures, int qua, long long *seq);
 void	print(char **ab, int k);
-void	ready(int **pole, int quantity, int size, int *sequence);
-void	selection(char *test, int quantity);
+void	ready(int **pole, int qua, int size, long long *seq);
+void	selection(char *test, int qua);
 char	*tru(int fd, char *tmp);
 #endif

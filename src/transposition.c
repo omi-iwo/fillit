@@ -6,13 +6,13 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:49:03 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:45:20 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 16:25:34 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*sec_gen(int *sequence, int i, int j, int *sec)
+long long		*sec_gen(long long *seq, int i, int j, long long *sec)
 {
 	int	quantity;
 	int	s;
@@ -24,51 +24,51 @@ int		*sec_gen(int *sequence, int i, int j, int *sec)
 		s = get_num(sec[0]);
 		if (s > 2)
 		{
-			j += (sequence[0] / (s / sec[0]));
-			sequence[0] = sequence[0] % (s / sec[0]);
-			j = more(sec, sequence, i, j);
+			j += (seq[0] / (s / sec[0]));
+			seq[0] = seq[0] % (s / sec[0]);
+			j = more(sec, seq, i, j);
 			i++;
 		}
 		if (s == 2)
 		{
-			fine(sec, sequence, i, j);
+			fine(sec, seq, i, j);
 			s = 0;
 		}
 	}
-	return (sequence);
+	return (seq);
 }
 
-int		*presec(int quantity, int *sequence)
+long long		*presec(int qua, long long *seq)
 {
-	int	*sec;
+	long long	*sec;
 	int	i;
 	int	x;
 	int	j;
 
 	sec = NULL;
-	sec = sequencecreate(quantity, sec);
+	sec = sequencecreate(qua);
 	i = 1;
 	j = 1;
-	x = sequence[0];
-	sec[0] = quantity;
-	sequence = sec_gen(sequence, i, j, sec);
-	sequence[0] = x + 1;
+	x = seq[0];
+	sec[0] = qua;
+	seq = sec_gen(seq, i, j, sec);
+	seq[0] = x + 1;
 	free(sec);
-	return (sequence);
+	return (seq);
 }
 
-void	transposition(int **pole, int **figures, int quantity, int *sequence)
+void	transposition(int **pole, int **figures, int qua, long long *seq)
 {
 	int	i;
 	int	j;
 	int	x;
 
 	i = 0;
-	j = 0;
-	sequence = presec(quantity, sequence);
-	while (j < quantity)
+	j = 1;
+	seq = presec(qua, seq);
+	while (j < qua)
 	{
-		x = sequence[j + 1];
+		x = seq[j + 1];
 		while (i < 8)
 		{
 			pole[j][i] = figures[x][i];

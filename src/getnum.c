@@ -6,15 +6,15 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:53:03 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:41:27 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/19 09:09:56 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		get_num(int input)
+long long		get_num(int input)
 {
-	int	sum;
+	long long	sum;
 
 	sum = 1;
 	while (input > 0)

@@ -6,7 +6,7 @@
 #    By: sphone <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/06 19:48:53 by sphone            #+#    #+#              #
-#    Updated: 2020/02/14 23:25:10 by sphone           ###   ########.fr        #
+#    Updated: 2020/02/18 15:16:40 by olegolszewski    ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,9 @@ HEADER_FILES_NAMES = fillit.h
 HEADER_FILES = $(addprefix includes/, $(HEADER_FILES_NAMES))
 
 SRC_FILES = \
+src/size.c \
 src/assembly2.c \
-src/assembly3.c \
 src/assemply.c \
-src/assemplyback.c \
-src/assemplyback2.c \
 src/charly.c \
 src/createplace.c \
 src/errors.c \
@@ -40,25 +38,16 @@ src/more.c \
 src/place.c \
 src/prer.c \
 src/preshift.c \
-src/preshiftback.c \
 src/presoft.c \
-src/presoft2.c \
-src/presoft3.c \
-src/presoftback.c \
-src/presoftback2.c \
 src/print.c \
 src/ready.c \
 src/selection.c \
 src/sequencecreate.c \
-src/sequencecreate2.c \
-src/sequencecreate3.c \
 src/shiftpole.c \
-src/shiftpoleback.c \
 src/soft.c \
 src/swapy.c \
 src/testpre.c \
 src/transposition.c \
-src/transposition2.c \
 src/tru.c
 
 O_FILES = $(patsubst $(SRC_DIR)%.c, $(O_DIR)%.o, $(SRC_FILES))

@@ -6,37 +6,63 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:19:18 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:42:47 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/20 20:50:34 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		preback(int **pole, int **figures, int quantity, int *sequence)
-{
-	sequence[0] = 1;
-	return (assemblyback(pole, figures, quantity, sequence));
-}
-
-int		presoft(int **pole, int **figures, int quantity, int *sequence)
+void	loco(int **pole, int **figures, int qua)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (sequence[0] < get_num(quantity))
-		transposition(pole, figures, quantity, sequence);
-	else
+	j = 1;
+	while (j < qua)
 	{
-		if ((preback(pole, figures, quantity, sequence)))
-			return (2);
-		soft(pole, figures, quantity);
-		sequence[i++] = 1;
-		while (i < quantity + 1)
+		while (i < 8)
 		{
-			sequence[i] = i - 1;
+			pole[j][i] = figures[j][i];
 			i++;
 		}
-		return (1);
+		i = 0;
+		j++;
+	}
+	return ;
+}
+
+int		presoft(int **pole, int **figures, int qua, long long *seq)
+{
+	int	i;
+	int size;
+
+	size = seq[qua + 1];
+	i = 0;
+	if (seq[0] < get_num(qua - 1))
+	{
+		transposition(pole, figures, qua, seq);
+	}
+	else
+	{
+		if (shiftpole(pole[0], size, figures[seq[i + 1]]) != 0)
+		{
+			soft(pole, figures, qua);
+			seq[i] = 1;
+			while (++i < qua + 1)
+				seq[i] = i - 1;
+			return (1);
+		}
+		else
+		{
+			seq[i++] = 1;
+			while (i < qua + 1)
+			{
+				seq[i] = i - 1;
+				i++;
+			}
+			loco(pole, figures, qua);
+		}
 	}
 	return (0);
 }
