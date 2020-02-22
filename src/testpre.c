@@ -11,6 +11,40 @@
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include <stdio.h>
+
+int     simile(int x1, int x2, int y1, int y2)
+{
+    int i;
+
+    i = 1;
+    //printf("%d\n\nx1 = %d x2 = %d\n\n y1 = %d y2 = %d\n\n",i , x1, x2, y1, y2);
+    i++;
+        if (y1 == y2)
+        {
+            printf("\ny == 1 - %d 2 - %d\n", x1, x2);
+            if (x1 == x2)
+            {
+                printf("\nx == 1 - %d 2 - %d\n", x1, x2);
+                return (0);
+
+            }
+            if (x1 < x2)
+            {
+                //printf("\nx < 1 - %d 2 - %d\n", x1, x2);
+                return (2);
+            }
+            else
+            {
+                //printf("\nx > 1 - %d 2 - %d\n", x1, x2);
+                return (1);
+            }
+        }
+        if (y1 < y2)
+            return (2);
+        else
+            return (1);
+}
 
 int		test(int *temp, int *pole, int i)
 {
@@ -19,18 +53,11 @@ int		test(int *temp, int *pole, int i)
 	int x2;
 	int y2;
 
-	i = 0;
 	x1 = temp[i];
 	x2 = pole[i];
 	y1 = temp[i + 1];
 	y2 = pole[i + 1];
-
-	if (x1 + y1 == x2 + y2)
-		return (0);
-	if (x1 + y1 < x2 + y2)
-		return (2);
-	else
-		return (1);
+	return (simile(x1, x2, y1, y2));
 }
 
 int		testpreswap(int **pole, int **temp, int q)

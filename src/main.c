@@ -27,6 +27,8 @@ int			main(int argc, char *argv[])
 		errors(1);
 	if (!(i = charly(test)))
 		errors(1);
+	if (i > 26)
+	    errors(1);
 	selection(test, i);
 	return (0);
 }
