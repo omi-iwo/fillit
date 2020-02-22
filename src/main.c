@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 04:37:59 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/06 11:42:13 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/23 01:05:16 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int			main(int argc, char *argv[])
 		errors(1);
 	if (!(i = charly(test)))
 		errors(1);
-	if (i > 26)
-	    errors(1);
 	selection(test, i);
 	return (0);
 }
