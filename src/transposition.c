@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:49:03 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/23 01:05:16 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/23 02:42:36 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long long		*sec_gen(long long *seq, int i, int j, long long *sec)
 {
-	int	quantity;
-	int	s;
+	int			quantity;
+	int			s;
 
 	s = 1;
 	quantity = sec[0] + i;
@@ -41,9 +41,9 @@ long long		*sec_gen(long long *seq, int i, int j, long long *sec)
 long long		*presec(int qua, long long *seq)
 {
 	long long	*sec;
-	int	i;
-	int	x;
-	int	j;
+	int			i;
+	int			x;
+	int			j;
 
 	sec = NULL;
 	sec = sequencecreate(qua);
@@ -57,11 +57,11 @@ long long		*presec(int qua, long long *seq)
 	return (seq);
 }
 
-void	transposition(int **pole, int **figures, int qua, long long *seq)
+void			tr(int **pole, int **figures, int qua, long long *seq)
 {
-	int	i;
-	int	j;
-	int	x;
+	int			i;
+	int			j;
+	int			x;
 
 	i = 0;
 	j = 1;

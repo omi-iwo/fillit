@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 02:59:53 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/23 01:09:18 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/23 02:40:06 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		test(int *temp, int *pole, int i)
 	x2 = pole[i];
 	y1 = temp[i + 1];
 	y2 = pole[i + 1];
-
 	if (y1 < y2)
 		return (2);
 	if (x1 + y1 == x2 + y2)

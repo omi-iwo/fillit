@@ -6,16 +6,16 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 04:29:27 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/23 01:05:16 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/23 02:19:19 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	selection(char *test, int qua)
+void			selection(char *test, int qua)
 {
-	int	**figures;
-	int	**pole;
+	int			**figures;
+	int			**pole;
 	long long	*seq;
 
 	figures = NULL;

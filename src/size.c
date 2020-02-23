@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   size.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olegolszewski <olegolszewski@student.42.fr>+#+  +:+       +#+        */
+/*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 01:45:34 by olegolszewski     #+#    #+#             */
-/*   Updated: 2020/02/20 15:01:15 by olegolszewski    ###   ########.fr       */
+/*   Created: 2020/02/23 02:29:39 by sphone            #+#    #+#             */
+/*   Updated: 2020/02/23 02:29:51 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int		sizer(int **figures, int qua)
 	return (x);
 }
 
-void		size(int qua, long long *seq, int **figures)
+void	size(int qua, long long *seq, int **figures)
 {
-	int size;
+	int	size;
 	int i;
 
 	size = insize(qua);
@@ -61,4 +61,3 @@ void		size(int qua, long long *seq, int **figures)
 	seq[qua + 1] = size;
 	return ;
 }
-
