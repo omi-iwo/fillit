@@ -6,13 +6,13 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:25:52 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:44:23 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/24 06:37:10 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		yshifttest(int *onepole, long long size, int *figures)
+int		yshifttest(int *onepole, int size, int *figures)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int		yshifttest(int *onepole, long long size, int *figures)
 	return (0);
 }
 
-int		xshifttest(int *onepole, long long size)
+int		xshifttest(int *onepole, int size)
 {
 	int	i;
 
@@ -55,7 +55,7 @@ int		xshifttest(int *onepole, long long size)
 	return (0);
 }
 
-int		shiftpole(int *onepole, long long size, int *figures)
+int		shiftpole(int *onepole, int size, int *figures)
 {
 	if (xshifttest(onepole, size) != 0)
 	{

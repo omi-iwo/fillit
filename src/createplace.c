@@ -6,20 +6,21 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:13:49 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/14 22:39:49 by sphone           ###   ########.fr       */
+/*   Updated: 2020/02/23 01:05:16 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		**createplace(int **figures, int quantity)
+int		**createplace(int qua)
 {
 	int	i;
+	int **figures;
 
 	i = 0;
-	if (!(figures = (int **)malloc(quantity * sizeof(int*))))
+	if (!(figures = (int **)malloc(qua * sizeof(int*))))
 		return (NULL);
-	while (quantity > i)
+	while (qua > i)
 	{
 		if (!(figures[i++] = (int *)malloc(8 * sizeof(int))))
 		{

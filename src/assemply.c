@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:34:55 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/20 22:19:52 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/24 06:47:54 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,24 @@ int		testinside(int **p, int j, int x)
 	return (0);
 }
 
-void	assembly(int **pole, int **figures, int qua, long long *seq)
+void	assembly(int **pole, int **figures, int qua, int *seq)
 {
-	int	i;
 	int	x;
 
-	i = 1;
 	x = 0;
-	while (i < qua)
+	while (seq[0] < qua)
 	{
-		while (testinside(pole, i, x) != 0)
+
+		while (testinside(pole, seq[0], x) != 0)
 		{
-			if (shiftpole(pole[i], seq[qua + 1], figures[seq[i + 1]]) != 0)
+			if (shiftpole(pole[seq[0]], seq[1], figures[seq[0]]) != 0)
 			{
-				if (presoft(pole, figures, qua, seq) == 1)
-					seq[qua + 1] += 1;
-				i = 1;
+				presoft(pole, figures, qua, seq);
 			}
 		}
-		i++;
+		seq[0]++;
 	}
+
+	seq[0] = qua;
 	return ;
 }
