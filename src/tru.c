@@ -6,44 +6,36 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 04:34:08 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/23 01:05:16 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/29 14:12:45 by olegolszewski    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char		*trutru(char *tmp, int i)
-{
-	if (tmp[i - 1] != '\n' || tmp[i - 2] == '\n')
-		return (NULL);
-	tmp[i++] = '\n';
-	tmp[i] = '\0';
-	return (tmp);
-}
-
 char		*tru(int fd, char *tmp)
 {
 	char	buf;
-	int		fd_fd;
 	int		i;
 
-	tmp = NULL;
-	fd_fd = read(fd, &buf, 1);
-	if (fd_fd < 0)
-		return (NULL);
 	i = 0;
-	if (fd_fd == 1)
+	tmp = (char*)malloc(sizeof(char) * (21 * 26 + 2));
+	if (tmp == NULL)
+		return (NULL);
+	while (read(fd, &buf, 1))
 	{
-		tmp = (char*)malloc(sizeof(char) * 545);
-		while (fd_fd != '\0')
-		{
-			tmp[i] = buf;
-			i++;
-			fd_fd = read(fd, &buf, 1);
-		}
-		if (!(trutru(tmp, i)))
-			return (0);
+		if (i > 21 * 26)
+			return (NULL);
+		tmp[i] = buf;
+		i++;
 	}
+	if (i == 0)
+		return (NULL);
+	if ((i + 1) % 21 != 0)
+		return (NULL);
+	if (tmp[i - 1] != '\n')
+		return (NULL);
+	tmp[i] = '\n';
+	tmp[i + 1] = '\0';
 	close(fd);
 	return (tmp);
 }
