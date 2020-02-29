@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:34:55 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/29 12:01:01 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/29 17:57:22 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	assembly(int **pole, int **figures, int qua, int *seq)
 	x = 0;
 	while (seq[0] < qua)
 	{
-
 		while (testinside(pole, seq[0], x) != 0)
 		{
 			if (shiftpole(pole[seq[0]], seq[1], figures[seq[0]]) != 0)
@@ -56,7 +55,6 @@ void	assembly(int **pole, int **figures, int qua, int *seq)
 		}
 		seq[0]++;
 	}
-
 	seq[0] = qua;
 	return ;
 }

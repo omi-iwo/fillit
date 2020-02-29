@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 04:29:27 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/29 12:01:01 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/29 18:39:59 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		sizer(int **figures, int qua)
 	return (x);
 }
 
-void		size(int qua, int *seq, int **figures)
+void	size(int qua, int *seq, int **figures)
 {
 	int size;
 	int i;

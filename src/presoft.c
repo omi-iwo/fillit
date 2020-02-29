@@ -6,7 +6,7 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 03:19:18 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/29 12:01:01 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/29 18:33:25 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	soft(int *pole, int *figures)
 	return ;
 }
 
-void		presoft(int **pole, int **figures, int qua, int *seq)
+void	presoft(int **pole, int **figures, int qua, int *seq)
 {
 	soft(pole[seq[0]], figures[seq[0]]);
 	if (seq[0] > 0)

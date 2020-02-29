@@ -6,52 +6,11 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 01:57:27 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/29 16:07:32 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/29 18:26:43 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-//
-//int		val4(int j, int t, int r, int n)
-//{
-//	if ((t == 0 && r == 0) && (n == 0))
-//		return (j);
-//	else
-//		return (0);
-//}
-//
-//int		val3(int t, int r)
-//{
-//	if (t == 12 && r == 4)
-//		return (0);
-//	return (1);
-//}
-//
-//int		val2(const char *test, int i)
-//{
-//	int	k;
-//	int	s;
-//
-//	k = 0;
-//	s = 0;
-//	if (i > 20)
-//		s = i - 21;
-//	while (s < i)
-//	{
-//		if (test[s] == '#')
-//		{
-//			if (test[s + 1] == '#')
-//				k++;
-//			if (s <= i - 5 && test[s + 5] == '#')
-//				k++;
-//		}
-//		s++;
-//	}
-//	if (k == 3 || k == 4)
-//		return (0);
-//	else
-//		return (1);
-//}
 
 int		check_one_tetri(const char *test, int i, int r, int t)
 {
@@ -76,11 +35,6 @@ int		check_one_tetri(const char *test, int i, int r, int t)
 		return (1);
 	return (-1);
 }
-
-enum ARGS
-{
-	I, LAST_I, T, R, N
-};
 
 int		val(const char *test)
 {

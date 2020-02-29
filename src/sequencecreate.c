@@ -6,13 +6,13 @@
 /*   By: sphone <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 02:18:00 by sphone            #+#    #+#             */
-/*   Updated: 2020/02/29 12:01:01 by olegolszewski    ###   ########.fr       */
+/*   Updated: 2020/02/29 18:39:24 by sphone           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		*sequencecreate()
+int		*sequencecreate(void)
 {
 	int	i;
 	int *sequence;
